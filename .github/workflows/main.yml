@@ -1,0 +1,32 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+        - name: 'Checkout GitHub Action'
+          uses: actions/checkout@master
+        
+        - name: 'Login via Azure CLI'
+          uses: Azure/docker-login@v1
+          with:
+              login-server: mitsha.azurecr.io
+              username: mitsha
+              password: tcDwBhZ7B7mx4Y+JuAvWRuqQwY91fg86
+
+        - run: |
+            docker build . -t mitsha.azurecr.io/test-app:${{ github.sha }}
+            docker push mitsha.azurecr.io/test-app:${{ github.sha }}
+
+        - name: 'Azure Login'
+          uses: azure/login@v1
+          with:
+            creds: ${{ secrets.AZURE_CREDENTIALS }}
+        
+        - name: 'Deploy to Azure Container Instances'
+          uses: azure/CLI@v1
+          with: 
+            azcliversion: 2.0.72
+            inlineScript: |
+              az container create --resource-group resource_group_place_holder --name test-app --image mitsha.azurecr.io/test-app:${{ github.sha }} --ports 80 8080 --dns-name-label test-app --registry_username mitsha --registry_password tcDwBhZ7B7mx4Y+JuAvWRuqQwY91fg86
