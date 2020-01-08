@@ -27,6 +27,6 @@ jobs:
         - name: 'Deploy to Azure Container Instances'
           uses: azure/CLI@v1
           with: 
-            azcliversion: 2.0.72
+            azcliversion: 2.0.77
             inlineScript: |
               az container create --resource-group mitsha-test --name aciappdemo --image mitsha.azurecr.io/aciappdemo:${{ github.sha }} --ports 80 5777 --dns-name-label aciappdemo --registry-username ${{ SECRETS.REGISTRY_USERNAME }} --registry-password $${{ SECRETS.REGISTRY_PASSWORD }}
