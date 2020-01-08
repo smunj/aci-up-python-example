@@ -29,4 +29,6 @@ jobs:
           with: 
             azcliversion: 2.0.77
             inlineScript: |
-              az container create --resource-group mitsha-test --name aciappdemo --image mitsha.azurecr.io/aciappdemo:${{ github.sha }} --ports 80 5777 --dns-name-label aciappdemo --registry-username 52d7cd83-e11a-4998-88cb-6e1394793634 --registry-password 09cd0421-e641-46c3-89dd-7d8855b88fbd
+                echo ${{ SECRETS.REGISTRY_USERNAME }} 
+                echo ${{ SECRETS.REGISTRY_PASSWORD }}
+                az container create --resource-group mitsha-test --name aciappdemo --image mitsha.azurecr.io/aciappdemo:${{ github.sha }} --ports 80 8080 --dns-name-label aciappdemo --registry-username ${{ SECRETS.REGISTRY_USERNAME }} --registry-password ${{ SECRETS.REGISTRY_PASSWORD }}
