@@ -24,6 +24,10 @@ jobs:
           with:
             creds: ${{ secrets.AZURE_CREDENTIALS }}
         
+        - name: 'Display Passwords'
+          run: echo ${{ SECRETS.REGISTRY_USERNAME }} $${{ SECRETS.REGISTRY_PASSWORD }}
+          shell: bash
+        
         - name: 'Deploy to Azure Container Instances'
           uses: azure/CLI@v1
           with: 
