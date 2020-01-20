@@ -25,7 +25,8 @@ jobs:
             creds: ${{ SECRETS.AZURE_CREDENTIALS }}
             
         - name: 'Deploy to ACI using Action'
-          uses: mitsha-microsoft/aci-create-action@release-0.0.1
+          uses: mitsha-microsoft/aci-create-action@e37b3e7
+
           with:
               resource-group: mitsha-test
               dns-name-label: action-test-aci
