@@ -34,7 +34,7 @@ jobs:
               registry-login-server: mitsha.azurecr.io
               name: action-container-try
               ports: '80 8080'
-              registry-username: 'cb8b4991-a8a0-4412-b0be-50ac1cfce3e3'
-              registry-passowrd: '55d807ae-b436-4b9e-837c-6195d26501a9'
+              registry-username: ${{ SECRETS.REGISTRY_USERNAME }}
+              registry-password: ${{ SECRETS.REGISTRY_PASSWORD }}
               location: 'west us'
 
