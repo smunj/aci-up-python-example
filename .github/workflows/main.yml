@@ -32,7 +32,7 @@ jobs:
               dns-name-label: action-test-aci
               image: mitsha.azurecr.io/aci-up-python-example:${{ github.sha }}
               registry-login-server: mitsha.azurecr.io
-              name: action-container
+              name: action-container-try
               ports: '80 8080'
               registry-username: ${{ SECRETS.REGISTRY_USERNAME }}
               registry-passowrd: ${{ SECRETS.REGISTRY_PASSWORD }}
