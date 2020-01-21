@@ -30,10 +30,7 @@ jobs:
           with:
               resource-group: mitsha-test
               dns-name-label: action-test-aci
-              image: mitsha.azurecr.io/aci-up-python-example:${{ github.sha }}
-              registry-login-server: mitsha.azurecr.io
+              image: nginx
               name: action-container-try
-              ports: '80 8080'
-              registry-username: ${{ SECRETS.REGISTRY_USERNAME }}
-              registry-password: ${{ SECRETS.REGISTRY_PASSWORD }}
+              location: 'west us'
 
