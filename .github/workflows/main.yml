@@ -32,5 +32,5 @@ jobs:
               dns-name-label: action-test-aci
               image: nginx
               name: action-container-try
-              location: 'west us'
+              location: 'central us'
 
