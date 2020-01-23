@@ -18,4 +18,5 @@ jobs:
               image: nginx
               name: action-container-try
               location: 'central us'
+              gpu-count: 1
 
