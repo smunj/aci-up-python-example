@@ -19,3 +19,4 @@ jobs:
               name: action-container-try
               location: 'east us'
               gitrepo-url: 'https://github.com/mitsha-microsoft/aci-up-python-example'
+              gitrepo-mount-path: '/mnt/vol1'
