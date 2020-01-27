@@ -18,5 +18,4 @@ jobs:
               image: nginx
               name: action-container-try
               location: 'east us'
-              gpu-count: 1
-
+              gitrepo-url: 'https://github.com/mitsha-microsoft/aci-up-python-example'
