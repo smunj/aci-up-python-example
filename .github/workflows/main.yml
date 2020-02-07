@@ -14,8 +14,7 @@ jobs:
           uses: mitsha-microsoft/aci-create-action@v1
           with:
               resource-group: mitsha-test
-              dns-name-label: action-test-aci
+              dns-name-label: mitshaaction-test-aci
               image: nginx
               name: action-container-try
               location: 'east us'
-              gitrepo-url: 'https://github.com/mitsha-microsoft/aci-up-python-example'
