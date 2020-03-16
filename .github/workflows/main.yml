@@ -28,8 +28,10 @@ jobs:
           uses: Azure/aci-deploy-action@v1
           with:
               resource-group: mitsha-test
+              location: 'west us'
               dns-name-label: aci-up-python-example
               image: mitsha.azurecr.io/aci-up-python-example:${{ github.sha }}
               registry-username: ${{ SECRETS.REGISTRY_USERNAME }}
               registry-password: ${{ SECRETS.REGISTRY_PASSWORD }}
               name: aci-up-python-example
+              ports: 80 8080
