@@ -25,7 +25,7 @@ jobs:
             creds: ${{ SECRETS.AZURE_CREDENTIALS }}
             
         - name: 'Deploy to ACI'
-          uses: azure/aci-deploy-action@v1
+          uses: Azure/aci-deploy-action@v1
           with:
               resource-group: mitsha-test
               dns-name-label: aci-up-python-example
