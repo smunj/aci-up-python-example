@@ -25,7 +25,7 @@ jobs:
             creds: ${{ SECRETS.AZURE_CREDENTIALS }}
             
         - name: 'Deploy to ACI'
-          uses: Azure/aci-deploy-action@v1
+          uses: Azure/aci-deploy-action@f38f83f
           with:
               resource-group: mitsha-test
               location: 'west us'
